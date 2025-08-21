@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Perfume – beautyfragrance</title>
+    <meta name="description" content="น้ำหอมพรีเมียม กลิ่นติดทนนาน เหมาะกับคนไทยและโซนเอเชีย – ซื้อเลย รับโปรพิเศษวันนี้!" />
+
+    <!-- Google Font: Prompt (Thai) + Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Prompt', 'Montserrat', 'ui-sans-serif', 'system-ui']
+            },
+            colors: {
+              brand: {
+                gold: '#D4AF37',
+                dark: '#0B0B0D',
+                soft: '#1A1A1E'
+              }
+            },
+            boxShadow: {
+              glow: '0 10px 30px rgba(212, 175, 55, 0.25)'
+            },
+            backgroundImage: {
+              'hero-texture': "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.75) 100%), url('https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=2070&auto=format&fit=crop')",
+              'story-img': "url('https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=2069&auto=format&fit=crop')",
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+    </style>
+  </head>
+
+  <body class="bg-brand-dark text-white antialiased">
+    <!-- Header -->
+    <header class="fixed top-0 inset-x-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/40 bg-black/60">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="#" class="flex items-center gap-2">
+            <span class="inline-block w-8 h-8 rounded-full bg-gradient-to-br from-brand-gold/90 to-yellow-200"></span>
+            <span class="font-semibold tracking-wide">LUXE SCENT</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
+            <a href="#story" class="hover:text-white">แบรนด์</a>
+            <a href="#product" class="hover:text-white">สินค้า</a>
+            <a href="#reviews" class="hover:text-white">รีวิว</a>
+            <a href="#faq" class="hover:text-white">คำถามพบบ่อย</a>
+          </nav>
+          <a href="#buy" class="hidden md:inline-flex items-center gap-2 rounded-2xl bg-brand-gold px-5 py-2 font-medium text-black shadow-glow hover:translate-y-[-1px] transition">
+            ซื้อเลย
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.293 2.586A1 1 0 006.618 17H18m-8 0a2 2 0 104 0m-4 0H6.618"/></svg>
+          </a>
+          <!-- Mobile menu button -->
+          <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-white/10">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M3.75 5.25a.75.75 0 000 1.5h16.5a.75.75 0 000-1.5H3.75zm0 6a.75.75 0 000 1.5h16.5a.75.75 0 000-1.5H3.75zm0 6a.75.75 0 000 1.5h16.5a.75.75 0 000-1.5H3.75z" clip-rule="evenodd" /></svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile menu panel -->
+      <div id="mobileMenu" class="md:hidden hidden border-t border-white/10">
+        <div class="px-4 py-3 space-y-2 text-white/90">
+          <a href="#story" class="block py-2">แบรนด์</a>
+          <a href="#product" class="block py-2">สินค้า</a>
+          <a href="#reviews" class="block py-2">รีวิว</a>
+          <a href="#faq" class="block py-2">คำถามพบบ่อย</a>
+          <a href="#buy" class="inline-flex items-center gap-2 rounded-2xl bg-brand-gold px-4 py-2 font-medium text-black shadow-glow">ซื้อเลย</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative bg-hero-texture bg-cover bg-center min-h-[92vh] flex items-center" id="home">
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+        <div class="grid lg:grid-cols-2 gap-10 items-center py-32">
+          <div class="max-w-xl">
+            <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs tracking-wide">ใหม่ล่าสุด · กลิ่นที่ออกแบบเพื่อชาวเอเชีย</span>
+            <h1 class="mt-5 text-4xl sm:text-5xl font-semibold leading-tight">เสน่ห์ที่ติดตัวคุณ<br class="hidden sm:block"/>ในทุกก้าว</h1>
+            <p class="mt-4 text-white/80">น้ำหอมพรีเมียม ส่วนผสมนำเข้าจากฝรั่งเศส กลิ่นติดทนนานสูงสุด 12 ชั่วโมง* พร้อมโปรพิเศษวันนี้เท่านั้น</p>
+            <div class="mt-8 flex flex-wrap items-center gap-3">
+              <a href="#buy" class="inline-flex items-center gap-2 rounded-xl bg-brand-gold px-6 py-3 text-black font-semibold shadow-glow">สั่งซื้อเลย</a>
+              <a href="#product" class="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-3 text-white/90">ดูรายละเอียด</a>
+            </div>
+            <div class="mt-6 flex items-center gap-5 text-sm text-white/70">
+              <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> ส่งฟรี เก็บเงินปลายทาง</div>
+              <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6h4.5"/></svg> กลิ่นติดทน 8–12 ชม.</div>
+            </div>
+          </div>
+          <div class="hidden lg:flex justify-end">
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1556229152-0c52b9c7b3f6?q=80&w=1900&auto=format&fit=crop" alt="perfume bottle" class="w-[480px] h-[600px] object-cover rounded-3xl shadow-2xl"/>
+              <div class="absolute -left-6 -bottom-6 bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/10">
+                <p class="text-sm text-white/80">Eau de Parfum · 50ml</p>
+                <p class="text-lg font-semibold text-brand-gold">1,490฿ <span class="line-through text-white/50 ml-2">2,490฿</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- scroll hint -->
+      <a href="#usp" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-sm hover:text-white">เลื่อนลงเพื่อดูรายละเอียด</a>
+    </section>
+
+    <!-- USP -->
+    <section id="usp" class="py-16 md:py-24 bg-brand-soft/70">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div class="text-brand-gold mb-2">🌟</div>
+            <h3 class="font-semibold">ติดทนนาน</h3>
+            <p class="text-sm text-white/70">หอมชัด 8–12 ชั่วโมง*</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div class="text-brand-gold mb-2">🇫🇷</div>
+            <h3 class="font-semibold">กลิ่นนำเข้าฝรั่งเศส</h3>
+            <p class="text-sm text-white/70">คุณภาพระดับสากล</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div class="text-brand-gold mb-2">🚚</div>
+            <h3 class="font-semibold">ส่งฟรี + COD</h3>
+            <p class="text-sm text-white/70">เก็บเงินปลายทางได้</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div class="text-brand-gold mb-2">🛡️</div>
+            <h3 class="font-semibold">รับประกัน 7 วัน</h3>
+            <p class="text-sm text-white/70">ไม่พอใจยินดีคืนเงิน</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section id="story" class="py-16 md:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+        <div class="rounded-3xl overflow-hidden min-h-[320px] bg-story-img bg-cover bg-center"></div>
+        <div>
+          <h2 class="text-3xl md:text-4xl font-semibold">ออกแบบมาเพื่อคนรุ่นใหม่ในเอเชีย</h2>
+          <p class="mt-4 text-white/80">โทนกลิ่นสดชื่นหรูหรา ผสาน Citrus, White Floral และ Musk ที่เข้ากับผิวชาวเอเชีย ให้ความหอมที่สุภาพแต่มีคาแรกเตอร์ เหมาะกับทุกโอกาสทั้งทำงานและออกเดต</p>
+          <ul class="mt-6 space-y-2 text-white/80">
+            <li>• Top: Bergamot, Pear</li>
+            <li>• Heart: Jasmine, Orange Blossom</li>
+            <li>• Base: Musk, Amber</li>
+          </ul>
+          <a href="#product" class="mt-8 inline-flex items-center gap-2 rounded-xl border border-white/20 px-5 py-3">ดูสินค้า</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section id="product" class="py-16 md:py-24 bg-brand-soft/70">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between gap-4">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-semibold">เลือกขนาดที่ใช่สำหรับคุณ</h2>
+            <p class="mt-2 text-white/75">ราคาพิเศษวันนี้ พร้อมของแถม Mini Perfume 5ml สำหรับ 100 ออเดอร์แรก</p>
+          </div>
+          <a href="#buy" class="hidden md:inline-flex items-center gap-2 rounded-xl bg-brand-gold px-5 py-3 text-black font-semibold shadow-glow">ซื้อเลย</a>
+        </div>
+
+        <!-- Cards / horizontal on mobile -->
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 30 ml -->
+          <article class="rounded-3xl overflow-hidden border border-white/10 bg-white/5">
+            <img src="https://images.unsplash.com/photo-1523292554188-0a129d6213d9?q=80&w=1887&auto=format&fit=crop" alt="30ml" class="h-56 w-full object-cover"/>
+            <div class="p-5">
+              <h3 class="text-lg font-semibold">Eau de Parfum 30ml</h3>
+              <p class="mt-1 text-sm text-white/70">พกพาง่าย เหมาะสำหรับเริ่มต้น</p>
+              <div class="mt-4 flex items-baseline gap-3">
+                <span class="text-2xl font-semibold text-brand-gold">990฿</span>
+                <span class="text-white/50 line-through">1,590฿</span>
+              </div>
+              <button data-variant="30ml" class="buyBtn mt-5 w-full rounded-xl bg-brand-gold py-3 text-black font-semibold">หยิบใส่ตะกร้า</button>
+            </div>
+          </article>
+
+          <!-- Card 50 ml -->
+          <article class="rounded-3xl overflow-hidden border border-brand-gold/30 bg-white/5 ring-1 ring-brand-gold/30">
+            <div class="absolute m-3 inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-semibold text-black">ขายดี</div>
+            <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=1887&auto=format&fit=crop" alt="50ml" class="h-56 w-full object-cover"/>
+            <div class="p-5">
+              <h3 class="text-lg font-semibold">Eau de Parfum 50ml</h3>
+              <p class="mt-1 text-sm text-white/70">สมดุลคุ้มค่า กลิ่นชัดติดทน</p>
+              <div class="mt-4 flex items-baseline gap-3">
+                <span class="text-2xl font-semibold text-brand-gold">1,490฿</span>
+                <span class="text-white/50 line-through">2,490฿</span>
+              </div>
+              <button data-variant="50ml" class="buyBtn mt-5 w-full rounded-xl bg-brand-gold py-3 text-black font-semibold shadow-glow">ซื้อเลย</button>
+            </div>
+          </article>
+
+          <!-- Card 100 ml -->
+          <article class="rounded-3xl overflow-hidden border border-white/10 bg-white/5">
+            <img src="https://images.unsplash.com/photo-1596995804697-5fe2aa77d7fd?q=80&w=1887&auto=format&fit=crop" alt="100ml" class="h-56 w-full object-cover"/>
+            <div class="p-5">
+              <h3 class="text-lg font-semibold">Eau de Parfum 100ml</h3>
+              <p class="mt-1 text-sm text-white/70">คุ้มสุดสำหรับสายใช้ประจำ</p>
+              <div class="mt-4 flex items-baseline gap-3">
+                <span class="text-2xl font-semibold text-brand-gold">2,390฿</span>
+                <span class="text-white/50 line-through">3,790฿</span>
+              </div>
+              <button data-variant="100ml" class="buyBtn mt-5 w-full rounded-xl bg-brand-gold py-3 text-black font-semibold">หยิบใส่ตะกร้า</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="py-16 md:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between gap-4">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-semibold">เสียงจากผู้ใช้จริง</h2>
+            <p class="mt-2 text-white/75">รีวิวจากลูกค้าที่สั่งซื้อและใช้งานจริง</p>
+          </div>
+        </div>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <!-- Review Card -->
+          <article class="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <div class="flex items-center gap-3">
+              <img class="w-10 h-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1887&auto=format&fit=crop" alt="profile"/>
+              <div>
+                <p class="font-medium">คุณเมย์</p>
+                <p class="text-xs text-white/60">⭐️⭐️⭐️⭐️⭐️</p>
+              </div>
+            </div>
+            <p class="mt-4 text-white/80">กลิ่นหอมละมุนมาก ใช้แล้วมั่นใจขึ้นจริง ๆ ติดทนทั้งวันค่ะ</p>
+          </article>
+          <article class="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <div class="flex items-center gap-3">
+              <img class="w-10 h-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1887&auto=format&fit=crop" alt="profile"/>
+              <div>
+                <p class="font-medium">คุณต้น</p>
+                <p class="text-xs text-white/60">⭐️⭐️⭐️⭐️</p>
+              </div>
+            </div>
+            <p class="mt-4 text-white/80">กลิ่นสุภาพมาก ใช้ทำงานได้ทุกวัน เพื่อนทักบ่อยว่าใช้น้ำหอมอะไร</p>
+          </article>
+          <article class="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <div class="flex items-center gap-3">
+              <img class="w-10 h-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?q=80&w=1887&auto=format&fit=crop" alt="profile"/>
+              <div>
+                <p class="font-medium">คุณฟ้า</p>
+                <p class="text-xs text-white/60">⭐️⭐️⭐️⭐️⭐️</p>
+              </div>
+            </div>
+            <p class="mt-4 text-white/80">ชอบแพ็กเกจจิ้งมาก ดูพรีเมียม ของแถม mini perfume น่ารักค่ะ</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promotion with Countdown -->
+    <section id="promo" class="py-14 bg-gradient-to-r from-brand-soft to-black">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl border border-brand-gold/30 bg-white/5 p-6 md:p-10 text-center">
+          <p class="text-sm tracking-wide text-white/80">โปรพิเศษสำหรับวันนี้เท่านั้น</p>
+          <h3 class="mt-2 text-3xl md:text-4xl font-semibold">ลดทันที 40% + แถม Mini Perfume 5ml</h3>
+          <div class="mt-6 flex items-center justify-center gap-3">
+            <div class="rounded-2xl border border-white/10 bg-black/40 px-4 py-3">
+              <div id="d" class="text-3xl font-semibold">00</div>
+              <div class="text-xs text-white/60">วัน</div>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-black/40 px-4 py-3">
+              <div id="h" class="text-3xl font-semibold">00</div>
+              <div class="text-xs text-white/60">ชั่วโมง</div>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-black/40 px-4 py-3">
+              <div id="m" class="text-3xl font-semibold">00</div>
+              <div class="text-xs text-white/60">นาที</div>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-black/40 px-4 py-3">
+              <div id="s" class="text-3xl font-semibold">00</div>
+              <div class="text-xs text-white/60">วินาที</div>
+            </div>
+          </div>
+          <a id="buy" href="#checkout" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-brand-gold px-6 py-3 text-black font-semibold shadow-glow">ซื้อเลยตอนนี้</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ / Guarantee -->
+    <section id="faq" class="py-16 md:py-24">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-semibold text-center">คำถามพบบ่อย</h2>
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+          <details class="group rounded-2xl border border-white/10 bg-white/5 p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between font-medium">ติดทนนานไหม?
+              <span class="transition group-open:rotate-180">⌄</span>
+            </summary>
+            <p class="mt-3 text-white/75">ในสภาพอากาศทั่วไป กลิ่นติดทน 8–12 ชั่วโมง ทั้งนี้ขึ้นอยู่กับสภาพผิวและกิจกรรมระหว่างวัน</p>
+          </details>
+          <details class="group rounded-2xl border border-white/10 bg-white/5 p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between font-medium">ชำระเงินอย่างไร?
+              <span class="transition group-open:rotate-180">⌄</span>
+            </summary>
+            <p class="mt-3 text-white/75">รองรับโอน/บัตร/QR PromptPay และเก็บเงินปลายทาง (COD)</p>
+          </details>
+          <details class="group rounded-2xl border border-white/10 bg-white/5 p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between font-medium">จัดส่งใช้เวลากี่วัน?
+              <span class="transition group-open:rotate-180">⌄</span>
+            </summary>
+            <p class="mt-3 text-white/75">กรุงเทพฯ/ปริมณฑล 1–2 วัน ต่างจังหวัด 2–3 วัน โดย Kerry/Flash</p>
+          </details>
+          <details class="group rounded-2xl border border-white/10 bg-white/5 p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between font-medium">มีการรับประกันไหม?
+              <span class="transition group-open:rotate-180">⌄</span>
+            </summary>
+            <p class="mt-3 text-white/75">รับประกันความพึงพอใจ 7 วัน ไม่พอใจยินดีคืนเงิน</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Checkout CTA Strip -->
+    <section id="checkout" class="py-10 bg-white/5 border-t border-white/10">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div>
+            <h3 class="text-2xl font-semibold">พร้อมสั่งซื้อแล้วหรือยัง?</h3>
+            <p class="text-white/75">คลิกปุ่มด้านขวาเพื่อทำรายการสั่งซื้อทันที</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/PromptPay_Logo.png" class="h-8 w-auto bg-white rounded px-2 py-1" alt="PromptPay"/>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" class="h-6 w-auto bg-white rounded px-2 py-1" alt="Visa"/>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Mastercard-logo.png" class="h-6 w-auto bg-white rounded px-2 py-1" alt="Mastercard"/>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Truemoneywalletlogo2021.png" class="h-6 w-auto bg-white rounded px-2 py-1" alt="TrueMoney"/>
+          </div>
+          <a href="#" class="inline-flex items-center gap-2 rounded-xl bg-brand-gold px-6 py-3 text-black font-semibold shadow-glow">ไปหน้าชำระเงิน</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="inline-block w-8 h-8 rounded-full bg-gradient-to-br from-brand-gold/90 to-yellow-200"></span>
+              <span class="font-semibold tracking-wide">LUXE SCENT</span>
+            </div>
+            <p class="text-white/70 text-sm">น้ำหอมพรีเมียมสำหรับคนไทยและโซนเอเชีย กลิ่นที่สร้างเอกลักษณ์และความมั่นใจ</p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3">เมนู</h4>
+            <ul class="space-y-2 text-white/70 text-sm">
+              <li><a href="#story">แบรนด์</a></li>
+              <li><a href="#product">สินค้า</a></li>
+              <li><a href="#reviews">รีวิว</a></li>
+              <li><a href="#faq">คำถามพบบ่อย</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3">ติดต่อเรา</h4>
+            <ul class="space-y-2 text-white/70 text-sm">
+              <li>Line: @luxescent</li>
+              <li>IG: @luxescent.official</li>
+              <li>โทร: 090-000-0000</li>
+              <li>อีเมล: hello@luxescent.com</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3">ติดตามข่าวสาร</h4>
+            <form class="flex gap-2">
+              <input type="email" required placeholder="อีเมลของคุณ" class="flex-1 rounded-xl bg-white/10 border border-white/10 px-4 py-3 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-brand-gold">
+              <button class="rounded-xl bg-brand-gold text-black px-5 font-semibold">สมัคร</button>
+            </form>
+          </div>
+        </div>
+        <div class="mt-10 border-t border-white/10 pt-6 text-center text-white/60 text-sm">© 2025 LUXE SCENT. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <!-- Sticky mobile bar -->
+    <div class="fixed md:hidden bottom-3 left-1/2 -translate-x-1/2 z-50 w-[92%]">
+      <div class="flex gap-2 rounded-2xl border border-white/10 bg-black/70 backdrop-blur p-2">
+        <a href="#buy" class="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-brand-gold px-4 py-3 text-black font-semibold">ซื้อเลย</a>
+        <a href="https://line.me" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-4 py-3">แชท LINE</a>
+      </div>
+    </div>
+
+    <!-- Floating chat button (desktop) -->
+    <a href="https://line.me" class="hidden md:flex fixed bottom-6 right-6 z-50 items-center gap-2 rounded-full bg-green-500 px-4 py-3 font-semibold shadow-lg hover:shadow-xl" aria-label="Chat on LINE">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M2.004 12C2.004 6.477 6.48 2 12.004 2s10 4.477 10 10-4.476 10-10 10a9.96 9.96 0 01-5.14-1.454l-3.148.815a1 1 0 01-1.214-1.214l.815-3.148A9.961 9.961 0 012.004 12z"/></svg>
+      LINE
+    </a>
+
+    <!-- Simple JS: Mobile menu, countdown, buy buttons -->
+    <script>
+      // Mobile menu toggle
+      const mbBtn = document.getElementById('menuBtn');
+      const mbMenu = document.getElementById('mobileMenu');
+      if (mbBtn) {
+        mbBtn.addEventListener('click', () => mbMenu.classList.toggle('hidden'));
+      }
+
+      // Countdown: set deadline 48 hours from now
+      const deadline = new Date(Date.now() + 48 * 60 * 60 * 1000);
+      const dEl = document.getElementById('d');
+      const hEl = document.getElementById('h');
+      const mEl = document.getElementById('m');
+      const sEl = document.getElementById('s');
+      const tick = () => {
+        const now = new Date();
+        let diff = Math.max(0, deadline - now);
+        const d = Math.floor(diff / (1000*60*60*24)); diff -= d*24*60*60*1000;
+        const h = Math.floor(diff / (1000*60*60)); diff -= h*60*60*1000;
+        const m = Math.floor(diff / (1000*60)); diff -= m*60*1000;
+        const s = Math.floor(diff / 1000);
+        if (dEl) dEl.textContent = String(d).padStart(2, '0');
+        if (hEl) hEl.textContent = String(h).padStart(2, '0');
+        if (mEl) mEl.textContent = String(m).padStart(2, '0');
+        if (sEl) sEl.textContent = String(s).padStart(2, '0');
+      };
+      setInterval(tick, 1000); tick();
+
+      // Simulated add to cart / buy events
+      document.querySelectorAll('.buyBtn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const variant = e.currentTarget.getAttribute('data-variant');
+          alert(`เพิ่มลงตะกร้า: Eau de Parfum ${variant}`);
+        });
+      });
+    </script>
+  </body>
+</html>
